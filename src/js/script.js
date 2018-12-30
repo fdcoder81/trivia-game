@@ -22,13 +22,6 @@ const getQuestion = async () => {
 }
 
 
-// const arrQuestions = async () => {
-//     await getQuestion();
-//     renderQuestion();
-// }
-
-// arrQuestions();
-
 // RANDOMIZE ANSWERS ARRAY
 function shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
@@ -41,6 +34,7 @@ function shuffle(a) {
 
 // RENDER QUIZ TO DOM
 let renderQuestion = async () => {
+
     await getQuestion();
     console.log(quiz);
     shuffle(quiz.answers);
@@ -59,20 +53,33 @@ let renderQuestion = async () => {
         document.querySelector('.answers-box').appendChild(btn);
         id ++;
     });
+
+    game();
+
+    document.querySelector('.btn-new').addEventListener('click', function(e){
+        renderQuestion();
+    })
 }
 
+
 let game = () => {
-    document.querySelector('.btn-style'),addEventListener('click', function(e) {
-        console.log(e.target.textContent);
-        let guess = e.target.textContent;
+        let p = document.createElement('p');
+        let btn = document.querySelector('.btn-style')
+        btn.addEventListener('click', function(e) {
+        console.log(btn.textContent);
+        let guess = btn.textContent;
+        
         if(guess === quiz.correctAnsw) {
             console.log('Correct!!')
+            btn.classList.add('correct')
+            p.textContent = 'Correct!!'
+            document.querySelector('body').appendChild(p);
         } else {
             console.log('Try Again')
+            btn.classList.add('incorrect')
         }
     })
 }
 
 renderQuestion();
-game();
 
