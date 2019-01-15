@@ -7,40 +7,93 @@
 }
 
 body {
-    background: lightgray;
-    color: navy;
+    background: #777;
     text-align: center;
 }
 
 h1 {
-    color: white;
+    color: #f7f7f7;
+    font-size: 4rem;
+    margin-top: 2rem;
 }
 
-h3 {
-    font-size: 2rem;
-    max-width: 50rem;
-    margin: 2rem auto;
-}
-
-.btn-style {
-    display: block;
-    padding: .5rem 1rem;
-    font-size: 1.5rem;
-    margin: 1rem auto;
+.question {
+    width: 50%;
+    background-color: #f7f7f7;
+    margin: 4rem auto;
     border-radius: 2rem;
+    box-shadow: 0 1rem 2rem rgba(black, .4);
+
+    &__title {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        letter-spacing: 1.5px;
+        color: #5643fa;
+        padding-top: 2.5rem;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    &__answers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem;
+        padding-bottom: 2.5rem;
+    }
+
+    &__box {
+        flex: 0 40%;
+    }
+}
+
+
+.btn-answers {
+    background-color: #fff;
+    color: #777;
+    padding: .5rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 10rem;
     border: 1px solid;
     outline: none;
+    margin: .8rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(black, .4);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba(black, .4);
+      }
 }
 
 .btn-new {
     display: block;
-    padding: .5rem 1rem;
+    padding: .8rem 2rem;
     font-size: 1.5rem;
-    background-color: linen;
+    background-color: #fff;
+    color: #ff7730;
     font-weight: 700;
     border-radius: 2rem;
     border: none;
     margin: 2rem auto;
+    cursor: pointer;
+    transition: all .2s;
+    outline: none;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(black, .4);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba(black, .4);
+      }
 }
 
 .correct {
