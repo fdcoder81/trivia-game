@@ -4,8 +4,9 @@ let question = [];
 let questionNumber = 0;
 let questionTitle = document.querySelector('.question__title');
 let questionAnswers = document.querySelector('.question__answers');
-let questionCount = document.querySelector('.question-count');
-let scoreText = document.querySelector('.score');
+let questionCount = document.querySelector('.status__count');
+let scoreText = document.querySelector('.status__score');
+let nextQuestionBtn = document.querySelector('.btn-next');
 
 
 
@@ -42,8 +43,7 @@ let getQuestion = async () => {
 
     let renderQuestion = function (questionNumber) {
         let answer = '';
-        // await getQuestion();
-        console.log(question);
+        nextQuestionBtn.classList.remove('isVisible');
         questionTitle.innerHTML = question[questionNumber].question;
 
         //RANDOMIZE ANSWERS ARRAY
@@ -52,7 +52,7 @@ let getQuestion = async () => {
         //CLEAN ANSWERS BOX
         questionAnswers.innerHTML = '';
         
-        questionCount.textContent = `Question n° ${questionNumber+1}`
+        questionCount.textContent = `Question : ${questionNumber+1}`
         scoreText.textContent = `Score : `
 
         for(let i=0; i<4 ; i++) {
@@ -65,6 +65,12 @@ let getQuestion = async () => {
             divBtn.appendChild(btnAnswer);
             
         }
+
+        let iCorrect = document.createElement('i');
+        iCorrect.classList.add('fas', 'fa-check');
+
+        // let btnNext = document.querySelector('.btn-next');
+
         let buttons = document.querySelectorAll('.btn-answers');
         buttons.forEach(function(currentBtn) {
             currentBtn.addEventListener('click', function(e){
@@ -72,11 +78,13 @@ let getQuestion = async () => {
                 if(answer === question[questionNumber].correct_answer) {
                     console.log('Correct!!');
                     currentBtn.classList.add('correct');
+                    currentBtn.insertAdjacentElement('afterend', iCorrect);
+                    nextQuestionBtn.classList.add('isVisible');
                 }
             })
         })
 
-        let newGame = document.querySelector('.btn-new').addEventListener('click', function(){
+        nextQuestionBtn.addEventListener('click', function(){
             questionNumber ++;
             if (questionNumber < 10) {
             renderQuestion(questionNumber);
