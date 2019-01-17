@@ -51,6 +51,7 @@ let getQuestion = async () => {
         questionTitle.innerHTML = question[questionNumber].question;
 
         btnNew.addEventListener('click', function() {
+            score = 0;
             waitingData();
         })
 

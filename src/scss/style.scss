@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #777;
+    background: #3CB371;
     text-align: center;
 }
 
@@ -35,7 +35,7 @@ h1 {
 .question {
     width: 60%;
     background-color: #f7f7f7;
-    margin: 4rem auto;
+    margin: 0.5rem auto 0.5rem auto;
     border-radius: 2rem;
     box-shadow: 0 1rem 2rem rgba(black, .4);
 
@@ -150,6 +150,6 @@ p {
 }
 
 .end-game {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #f7f7f7;
 }
