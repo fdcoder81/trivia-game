@@ -7,18 +7,20 @@
 }
 
 body {
-    background: #3CB371;
+    background-image: url('../img/earth.jpeg');
+    background-size: cover;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
     color: #f7f7f7;
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-top: 2rem;
 }
 
 .status {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     justify-content: space-evenly;
     padding: 2rem;
@@ -40,7 +42,7 @@ h1 {
     box-shadow: 0 1rem 2rem rgba(black, .4);
 
     &__title {
-        font-size: 2rem;
+        font-size: 1.5rem;
         line-height: 1.2;
         letter-spacing: 1.5px;
         color: #5643fa;
@@ -62,7 +64,7 @@ h1 {
     }
 
     i {
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: green;
 
         &.fa-times{
@@ -99,7 +101,7 @@ h1 {
 .btn-new {
     display: block;
     padding: .8rem 2rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background-color: #fff;
     color: #ff7730;
     font-weight: 700;
@@ -144,12 +146,21 @@ h1 {
 }
 
 p {
+    color: linen;
     margin-top: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: 400;
 }
 
 .end-game {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #f7f7f7;
+}
+
+.by{
+    font-size: 1.2rem;
+
+    a {
+        color: #fff;
+    }
 }

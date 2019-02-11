@@ -52,6 +52,7 @@ let getQuestion = async () => {
 
         btnNew.addEventListener('click', function() {
             score = 0;
+            endGameH2.textContent = '';
             waitingData();
         })
 
